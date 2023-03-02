@@ -1,14 +1,15 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Form } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Profile } from './pages/Profile';
 import { Contact } from './pages/Contact';
 import { Nav } from './pages/Nav';
+import { Forme } from './pages/Forme';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function App() {
 
-  const client = QueryClient();
+  const client = new QueryClient();
 
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
             <Nav />
             <Routes>
               <Route path='/' element={<Home />} />
+              <Route path='/Forme' element={<Forme />} />
               <Route path='/profile' element={<Profile />} />
               <Route path='/contact' element={<Contact />} />
               <Route path='*' element={<h1>Page Not found</h1>} />
